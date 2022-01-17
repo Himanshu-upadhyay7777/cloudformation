@@ -510,7 +510,7 @@
       Type: AWS::RDS::DBCluster
       Properties:
         DBInstanceIdentifier: wordpress-beta
-        DBInstanceClass: db.t3.small
+        DBInstanceClass: db.t2.medium
         DBName: wordpress
         Engine: aurora-mysql
         MultiAZ: true
