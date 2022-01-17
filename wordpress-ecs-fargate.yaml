@@ -512,7 +512,7 @@
         DBInstanceIdentifier: wordpress-beta
         DBInstanceClass: db.t2.medium
         DBName: wordpress
-        Engine: aurora-mysql
+        Engine: mysql
         MultiAZ: true
         MasterUserPassword: ZVvu54N,):Rj%xVd
         MasterUsername: admin
