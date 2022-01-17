@@ -509,12 +509,12 @@
     WordpressDB:
       Type: AWS::RDS::DBInstance
       Properties:
-        DBInstanceIdentifier: wp-db1
+        DBInstanceIdentifier: wordpress-beta
         DBInstanceClass: db.t3.micro
         DBName: wordpress
-        Engine: amazon aurora
-        multi-az: yes
-        MasterUserPassword: supersecretpassword
+        Engine: aurora-mysql
+        MultiAZ: true
+        MasterUserPassword: ZVvu54N,):Rj%xVd
         MasterUsername: admin
         PubliclyAccessible: false
         AllocatedStorage: 20
