@@ -507,7 +507,7 @@
           CidrIp: 10.0.0.0/16
 
     WordpressDB:
-      Type: AWS::RDS::DBCluster
+      Type: WS::RDS::DBInstance
       Properties:
         DBInstanceIdentifier: wordpress-beta
         DBInstanceClass: db.t2.medium
