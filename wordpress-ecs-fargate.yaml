@@ -439,7 +439,7 @@
         Encrypted: true
         FileSystemTags:
           - Key: Name
-            Value: Wordpress-beta
+            Value: Wordpress-demo
         PerformanceMode: generalPurpose
         ThroughputMode: bursting
 
@@ -448,7 +448,7 @@
       Properties:
         GroupDescription: FileSystem Security Group
         VpcId: !Ref VPC
-        GroupName: Wordpress-beta-EFS-SG
+        GroupName: Wordpress-Demo-EFS-SG
         SecurityGroupIngress:
         - IpProtocol: "tcp"
           FromPort: 2049
@@ -499,7 +499,7 @@
       Properties:
         GroupDescription: RDS Security Group
         VpcId: !Ref VPC
-        GroupName: Wordpress-beta-RDS-SG
+        GroupName: Wordpress-Demo-RDS-SG
         SecurityGroupIngress:
         - IpProtocol: "tcp"
           FromPort: 3306
@@ -509,12 +509,12 @@
     WordpressDB:
       Type: AWS::RDS::DBInstance
       Properties:
-        DBInstanceIdentifier: wordpress-beta
-        DBInstanceClass: db.t2.medium
+        DBInstanceIdentifier: wp-db1
+        DBInstanceClass: db.t3.micro
         DBName: wordpress
         Engine: mysql
+        MasterUserPassword: supersecretpassword
         MultiAZ: true
-        MasterUserPassword: ZVvu54N,):Rj%xVd
         MasterUsername: admin
         PubliclyAccessible: false
         AllocatedStorage: 20
@@ -527,7 +527,7 @@
       Properties:
         GroupDescription: ALB Security Group
         VpcId: !Ref VPC
-        GroupName: Wordpress-beta-ALB-SG
+        GroupName: Wordpress-Demo-ALB-SG
         SecurityGroupIngress:
         - IpProtocol: "tcp"
           FromPort: 80
