@@ -439,7 +439,7 @@
         Encrypted: true
         FileSystemTags:
           - Key: Name
-            Value: Wordpress-demo
+            Value: Wordpress-beta
         PerformanceMode: generalPurpose
         ThroughputMode: bursting
 
@@ -448,7 +448,7 @@
       Properties:
         GroupDescription: FileSystem Security Group
         VpcId: !Ref VPC
-        GroupName: Wordpress-Demo-EFS-SG
+        GroupName: Wordpress-beta-EFS-SG
         SecurityGroupIngress:
         - IpProtocol: "tcp"
           FromPort: 2049
@@ -499,7 +499,7 @@
       Properties:
         GroupDescription: RDS Security Group
         VpcId: !Ref VPC
-        GroupName: Wordpress-Demo-RDS-SG
+        GroupName: Wordpress-beta-RDS-SG
         SecurityGroupIngress:
         - IpProtocol: "tcp"
           FromPort: 3306
@@ -527,7 +527,7 @@
       Properties:
         GroupDescription: ALB Security Group
         VpcId: !Ref VPC
-        GroupName: Wordpress-Demo-ALB-SG
+        GroupName: Wordpress-beta-ALB-SG
         SecurityGroupIngress:
         - IpProtocol: "tcp"
           FromPort: 80
