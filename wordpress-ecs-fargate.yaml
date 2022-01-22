@@ -507,12 +507,22 @@
           CidrIp: 10.0.0.0/16
 
     WordpressDB:
-      Type: AWS::RDS::DBInstance
-      Properties:
-        DBInstanceIdentifier: wp-db1
-        DBInstanceClass: db.t3.micro
-        DBName: wordpress
-        Engine: mysql
+     Resources:
+       RDSCluster:
+       Type: AWS::RDS::DBCluster
+       Properties:
+        MasterUsername: ${self:custom.dbLogin} 
+        MasterUserPassword: ${self:custom.dbPassword} 
+        DatabaseName: wordpress
+        Engine: aurora
+        EngineMode: serverless
+        ScalingConfiguration:
+        AutoPause: true
+        MaxCapacity: 2
+        MinCapacity: 1
+        SecondsUntilAutoPause: 300
+        EnableHttpEndpoint: true
+        StorageEncrypted: true
         MasterUserPassword: supersecretpassword
         MultiAZ: true
         MasterUsername: admin
